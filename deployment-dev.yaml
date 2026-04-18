@@ -52,7 +52,7 @@ spec:
           volumeMounts:
             - name: nfs-storage
               mountPath: /nfs       
-     volumes:
+      volumes:
         - name: nfs-storage
           persistentVolumeClaim:
             claimName: flask-pvc    
