@@ -44,18 +44,20 @@ spec:
       labels:
         app: flask
     spec:
-      containers:
-        - name: flask
-          image: cithit/almafrtk:latest   #<------change this!!!!!
-          ports:
-            - containerPort: 5000
-          volumeMounts:
-            - name: nfs-storage
-              mountPath: /nfs       
-      volumes:
-        - name: nfs-storage
-          persistentVolumeClaim:
-            claimName: flask-pvc    
+containers:
+  - name: flask
+    image: cithit/almafrtk:latest
+    ports:
+      - containerPort: 5000
+
+    volumeMounts:
+      - name: nfs-storage
+        mountPath: /nfs
+
+volumes:
+  - name: nfs-storage
+    persistentVolumeClaim:
+      claimName: flask-pvc
 ---
 apiVersion: v1
 kind: Service
