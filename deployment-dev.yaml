@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path: /srv/nfs/almafrtk
+    path: /srv/nfs/almafrtk-225-sp26
     server: 10.48.228.25
   persistentVolumeReclaimPolicy: Retain
 ---
